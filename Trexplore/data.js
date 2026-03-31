@@ -8,7 +8,7 @@ const placesData = [
     category: "Beach",
     description:
       "Cox's Bazar is the longest natural sea beach in the world, stretching over 120 kilometers. This beautiful destination offers stunning sunsets, water sports, and fresh seafood. The beach is known for its golden sand and the gentle waves of the Bay of Bengal.",
-    image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600",
+    image: "https://d34vm3j4h7f97z.cloudfront.net/optimized/3X/3/7/373e58571d420b9b1162dc45a2cde9196b4f6df6_2_690x387.jpeg",
     rating: 4.7,
     bestTime: "October to March",
     entryFee: "Free",
@@ -26,7 +26,7 @@ const placesData = [
     category: "Forest",
     description:
       "The Sundarbans is the largest mangrove forest in the world and a UNESCO World Heritage Site. Home to the Royal Bengal Tiger, this unique ecosystem features rivers, creeks, and dense mangrove forests. It's a paradise for wildlife enthusiasts and nature lovers.",
-    image: "https://images.unsplash.com/photo-1564760055775-d63b17a55c44?w=600",
+    image: "https://dscdn.daily-sun.com/english/uploads/news_photos/2021/10/31/Sundarbans-ds.jpg",
     rating: 4.8,
     bestTime: "November to February",
     entryFee: "Permit required",
@@ -44,7 +44,7 @@ const placesData = [
     category: "Hill Station",
     description:
       "Known as the 'Queen of Hills', Sajek Valley is one of the most beautiful hill stations in Bangladesh. Located in the Chittagong Hill Tracts, it offers breathtaking views of clouds, mountains, and valleys. The indigenous culture adds to its charm.",
-    image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600",
+    image: "https://upload.wikimedia.org/wikipedia/commons/e/e9/Sajek_Valley_2_%28cropped%29.jpg",
     rating: 4.9,
     bestTime: "October to April",
     entryFee: "Permission required",
@@ -62,7 +62,7 @@ const placesData = [
     category: "Forest",
     description:
       "Ratargul is a freshwater swamp forest, one of the few in the world. During monsoon, the forest remains submerged in 20-30 feet of water. Visitors can explore the forest by boat, witnessing unique aquatic plant life and birds.",
-    image: "https://images.unsplash.com/photo-1511497584788-876760111969?w=600",
+    image: "https://grandsylhet.com/wp-content/uploads/2025/02/Ratargul-Swamp-Forest-with-boat-1024x538.webp",
     rating: 4.6,
     bestTime: "June to October (Monsoon)",
     entryFee: "Minimal",
@@ -80,7 +80,7 @@ const placesData = [
     category: "Tea Estate",
     description:
       "Known as the tea capital of Bangladesh, Srimangal is famous for its lush green tea gardens. The area is also rich in biodiversity with numerous forests and wildlife. Don't miss the famous seven-layer tea!",
-    image: "https://images.unsplash.com/photo-1564890369478-c89ca6d9cde9?w=600",
+    image: "https://royalbengaltours.com/wp-content/uploads/2019/08/serine-tea-estate-in-srimangal-for-holiday-trip.webp",
     rating: 4.7,
     bestTime: "October to March",
     entryFee: "Free (Tea gardens)",
@@ -116,7 +116,7 @@ const placesData = [
     category: "Beach",
     description:
       "Kuakata is unique as one of the few places where you can watch both sunrise and sunset from the beach. This virgin beach offers a tranquil escape with less crowd compared to Cox's Bazar.",
-    image: "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=600",
+    image: "https://mindtrip.ai/cdn-cgi/image/format=webp,w=1200/https://images.mindtrip.ai/attractions/6ebf/9ac6/bcc7/2132/9ff4/bda3/3dba/518f",
     rating: 4.6,
     bestTime: "November to March",
     entryFee: "Free",
@@ -134,7 +134,7 @@ const placesData = [
     category: "Island",
     description:
       "Bangladesh's only coral island, Saint Martin's offers crystal clear water, coral reefs, and a peaceful atmosphere. It's perfect for swimming, snorkeling, and enjoying fresh coconut water.",
-    image: "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=600",
+    image: "https://coxsbazarlife.com/wp-content/uploads/2024/11/St-Martin.jpeg",
     rating: 4.8,
     bestTime: "November to March",
     entryFee: "Ship fare",
@@ -152,7 +152,7 @@ const placesData = [
     category: "Historical",
     description:
       "The Pink Palace of Dhaka, Ahsan Manzil was the residential palace of the Nawab of Dhaka. Now a museum, it showcases the lifestyle of the Nawabs and houses numerous artifacts from the Mughal and British periods.",
-    image: "https://images.unsplash.com/photo-1564760055775-d63b17a55c44?w=600",
+    image: "https://www.ahsanmanzilticket.gov.bd/images/NMB.jpg",
     rating: 4.4,
     bestTime: "October to March",
     entryFee: "Nominal",
@@ -170,7 +170,7 @@ const placesData = [
     category: "Natural Beauty",
     description:
       "Jaflong is a scenic spot at the border with India, known for its stone collections from the Piyain River. The area offers stunning views of hills, tea gardens, and crystal clear river water.",
-    image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600",
+    image: "https://dscdn.daily-sun.com/english/uploads/news_photos/2020/02/08/Jaflong-daily-sun.jpg",
     rating: 4.5,
     bestTime: "November to February",
     entryFee: "Free",
@@ -188,7 +188,7 @@ const placesData = [
     category: "Hill Station",
     description:
       "The district headquarters of Rangamati is a scenic town surrounded by Kaptai Lake. It offers boat rides, tribal culture experiences, and beautiful hilltop views. The hanging bridge is a major attraction.",
-    image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600",
+    image: "https://upload.wikimedia.org/wikipedia/commons/b/bc/Rangamati1.jpg",
     rating: 4.6,
     bestTime: "October to March",
     entryFee: "Free (Boat charges apply)",
@@ -206,7 +206,7 @@ const placesData = [
     category: "Historical",
     description:
       "One of the finest examples of terracotta Hindu temples in Bangladesh. Built in the 18th century, it features intricate terracotta artwork depicting scenes from Hindu epics and everyday life.",
-    image: "https://images.unsplash.com/photo-1548013146-72479768bada?w=600",
+    image: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1b/55/96/11/kantajew-temple-kantajew.jpg?w=1200&h=-1&s=1",
     rating: 4.5,
     bestTime: "October to March",
     entryFee: "Nominal",
