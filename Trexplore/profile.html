@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile - TreXplore</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="container">
+        <div class="nav-wrapper">
+          <div class="logo">
+            <i class="fas fa-mountain"></i>
+            <span>TreXplore</span>
+          </div>
+          <ul class="nav-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="places.html">Explore Places</a></li>
+            <li><a href="profile.html" class="active">Profile</a></li>
+            <li><a href="login.html" class="btn-login">Login</a></li>
+          </ul>
+          <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+      <div class="container">
+        <h1>My Profile</h1>
+        <p>Manage your account and travel experiences</p>
+      </div>
+    </section>
+
+    <!-- Profile Section -->
+    <section class="profile-section">
+      <div class="container">
+        <div class="profile-layout">
+          <!-- Profile Sidebar -->
+          <div class="profile-sidebar">
+            <div class="profile-card">
+              <div class="profile-avatar">
+                <img
+                  src="https://ui-avatars.com/api/?name=Krish+Barua&size=200&background=4f46e5&color=fff"
+                  alt="Profile"
+                  id="profileAvatar"
+                />
+                <button class="avatar-edit">
+                  <i class="fas fa-camera"></i>
+                </button>
+              </div>
+              <h2 id="profileName">Krish Barua</h2>
+              <p id="profileEmail">krish@gmail.com</p>
+              <div class="profile-stats">
+                <div class="stat">
+                  <h3 id="placesVisited">12</h3>
+                  <p>Places Visited</p>
+                </div>
+                <div class="stat">
+                  <h3 id="blogsWritten">8</h3>
+                  <p>Blogs Written</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="profile-menu">
+              <button class="menu-item active" data-tab="overview">
+                <i class="fas fa-user"></i> Overview
+              </button>
+              <button class="menu-item" data-tab="blogs">
+                <i class="fas fa-blog"></i> My Blogs
+              </button>
+              <button class="menu-item" data-tab="favorites">
+                <i class="fas fa-heart"></i> Favorites
+              </button>
+              <button class="menu-item" data-tab="settings">
+                <i class="fas fa-cog"></i> Settings
+              </button>
+              <button class="menu-item logout">
+                <i class="fas fa-sign-out-alt"></i> Logout
+              </button>
+            </div>
+          </div>
+
+          <!-- Profile Content -->
+          <div class="profile-content">
+            <!-- Overview Tab -->
+            <div class="profile-tab active" id="overviewTab">
+              <div class="content-card">
+                <h2>About Me</h2>
+                <form id="profileForm">
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label>Full Name</label>
+                      <input type="text" id="fullName" value="Krish Barua" />
+                    </div>
+                    <div class="form-group">
+                      <label>Email</label>
+                      <input
+                        type="email"
+                        id="email"
+                        value="krish@gmail.com"
+                      />
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label>Phone</label>
+                      <input type="tel" id="phone" value="01882373776" />
+                    </div>
+                    <div class="form-group">
+                      <label>Location</label>
+                      <input
+                        type="text"
+                        id="location"
+                        value="Chattogram, Bangladesh"
+                      />
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label>Bio</label>
+                    <textarea id="bio" rows="4">
+Travel enthusiast exploring the beautiful places of Bangladesh.</textarea
+                    >
+                  </div>
+                  <button type="submit" class="btn-primary">
+                    Save Changes
+                  </button>
+                </form>
+              </div>
+
+              <div class="content-card">
+                <h2>Recent Activity</h2>
+                <div class="activity-list">
+                  <div class="activity-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                      <h4>Visited Cox's Bazar</h4>
+                      <p>2 days ago</p>
+                    </div>
+                  </div>
+                  <div class="activity-item">
+                    <i class="fas fa-pen"></i>
+                    <div>
+                      <h4>Wrote a blog about Sundarbans</h4>
+                      <p>5 days ago</p>
+                    </div>
+                  </div>
+                  <div class="activity-item">
+                    <i class="fas fa-heart"></i>
+                    <div>
+                      <h4>Added Sajek Valley to favorites</h4>
+                      <p>1 week ago</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Blogs Tab -->
+            <div class="profile-tab" id="blogsTab" style="display: none">
+              <div class="content-card">
+                <div class="card-header">
+                  <h2>My Blogs</h2>
+                  <button class="btn-primary">
+                    <i class="fas fa-plus"></i> Write New Blog
+                  </button>
+                </div>
+                <div class="blogs-grid" id="myBlogsGrid">
+                  <!-- User's blogs will be loaded here -->
+                  <div class="blog-item">
+                    <h3>Amazing Experience at Cox's Bazar</h3>
+                    <p>
+                      The sunset at Cox's Bazar was absolutely breathtaking...
+                    </p>
+                    <div class="blog-meta">
+                      <span><i class="fas fa-calendar"></i> Jan 15, 2026</span>
+                      <span><i class="fas fa-star"></i> 5.0</span>
+                    </div>
+                    <div class="blog-actions">
+                      <button class="btn-icon">
+                        <i class="fas fa-edit"></i> Edit
+                      </button>
+                      <button class="btn-icon">
+                        <i class="fas fa-trash"></i> Delete
+                      </button>
+                    </div>
+                  </div>
+                  <div class="blog-item">
+                    <h3>Exploring the Sundarbans</h3>
+                    <p>
+                      The mangrove forest is truly one of nature's wonders...
+                    </p>
+                    <div class="blog-meta">
+                      <span><i class="fas fa-calendar"></i> Jan 10, 2026</span>
+                      <span><i class="fas fa-star"></i> 4.8</span>
+                    </div>
+                    <div class="blog-actions">
+                      <button class="btn-icon">
+                        <i class="fas fa-edit"></i> Edit
+                      </button>
+                      <button class="btn-icon">
+                        <i class="fas fa-trash"></i> Delete
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Favorites Tab -->
+            <div class="profile-tab" id="favoritesTab" style="display: none">
+              <div class="content-card">
+                <h2>Favorite Places</h2>
+                <div class="places-grid" id="favoritePlaces">
+                  <!-- Favorite places will be loaded here -->
+                </div>
+              </div>
+            </div>
+
+            <!-- Settings Tab -->
+            <div class="profile-tab" id="settingsTab" style="display: none">
+              <div class="content-card">
+                <h2>Account Settings</h2>
+                <form id="settingsForm">
+                  <h3>Change Password</h3>
+                  <div class="form-group">
+                    <label>Current Password</label>
+                    <input type="password" id="currentPassword" />
+                  </div>
+                  <div class="form-group">
+                    <label>New Password</label>
+                    <input type="password" id="newPassword" />
+                  </div>
+                  <div class="form-group">
+                    <label>Confirm New Password</label>
+                    <input type="password" id="confirmPassword" />
+                  </div>
+                  <button type="submit" class="btn-primary">
+                    Update Password
+                  </button>
+                </form>
+              </div>
+
+              <div class="content-card">
+                <h2>Notification Preferences</h2>
+                <div class="settings-options">
+                  <div class="setting-item">
+                    <div>
+                      <h4>Email Notifications</h4>
+                      <p>Receive updates via email</p>
+                    </div>
+                    <label class="toggle">
+                      <input type="checkbox" checked />
+                      <span class="slider"></span>
+                    </label>
+                  </div>
+                  <div class="setting-item">
+                    <div>
+                      <h4>Blog Comments</h4>
+                      <p>Get notified when someone comments on your blog</p>
+                    </div>
+                    <label class="toggle">
+                      <input type="checkbox" checked />
+                      <span class="slider"></span>
+                    </label>
+                  </div>
+                  <div class="setting-item">
+                    <div>
+                      <h4>Newsletter</h4>
+                      <p>Receive weekly travel recommendations</p>
+                    </div>
+                    <label class="toggle">
+                      <input type="checkbox" />
+                      <span class="slider"></span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3><i class="fas fa-mountain"></i> TreXplore</h3>
+            <p>Discover the beauty of Bangladesh, one destination at a time.</p>
+            <div class="social-links">
+              <a href="#"><i class="fab fa-facebook"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+          </div>
+          <div class="footer-section">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="places.html">Explore Places</a></li>
+              <li><a href="profile.html">Profile</a></li>
+              <li><a href="login.html">Login</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4>Popular Divisions</h4>
+            <ul>
+              <li><a href="places.html?division=Dhaka">Dhaka</a></li>
+              <li><a href="places.html?division=Chittagong">Chittagong</a></li>
+              <li><a href="places.html?division=Sylhet">Sylhet</a></li>
+              <li><a href="places.html?division=Khulna">Khulna</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4>Contact</h4>
+            <ul>
+              <li><i class="fas fa-envelope"></i> info@trexplore.com</li>
+              <li><i class="fas fa-phone"></i> +880 1234-567890</li>
+              <li><i class="fas fa-map-marker-alt"></i> Dhaka, Bangladesh</li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2026 TreXplore. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
