@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -31,7 +31,25 @@
 
     <!-- Hero Section -->
     <section class="hero">
+      <div class="hero-slides" aria-hidden="true">
+        <div class="hero-slide active" id="heroSlideA"></div>
+        <div class="hero-slide" id="heroSlideB"></div>
+      </div>
       <div class="hero-overlay"></div>
+      <button
+        class="hero-arrow hero-arrow-left"
+        id="heroPrev"
+        aria-label="Previous wallpaper"
+      >
+        <i class="fas fa-chevron-left"></i>
+      </button>
+      <button
+        class="hero-arrow hero-arrow-right"
+        id="heroNext"
+        aria-label="Next wallpaper"
+      >
+        <i class="fas fa-chevron-right"></i>
+      </button>
       <div class="hero-content">
         <h1 class="hero-title">Discover the Beauty of Bangladesh</h1>
         <p class="hero-subtitle">
@@ -181,14 +199,17 @@
           <div class="footer-section">
             <h4>Contact</h4>
             <ul>
-              <li><i class="fas fa-phone"></i> 
+              <li>
+                <i class="fas fa-phone"></i>
                 <ul>
                   <li>+880 1882-373776</li>
                   <li>+880 1531-702209</li>
                   <li>+880 1882-837497</li>
                 </ul>
               </li>
-              <li><i class="fas fa-map-marker-alt"></i> Chattogram, Bangladesh</li>
+              <li>
+                <i class="fas fa-map-marker-alt"></i> Chattogram, Bangladesh
+              </li>
             </ul>
           </div>
         </div>

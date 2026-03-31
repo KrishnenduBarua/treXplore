@@ -49,9 +49,51 @@ function initPage() {
 
 // ===== HOME PAGE =====
 function initHomePage() {
+  initHeroSlideshow();
   loadFeaturedPlaces();
   initHomeSearch();
   initDivisionFilters();
+}
+
+function initHeroSlideshow() {
+  const slideA = document.getElementById("heroSlideA");
+  const slideB = document.getElementById("heroSlideB");
+  const prevBtn = document.getElementById("heroPrev");
+  const nextBtn = document.getElementById("heroNext");
+
+  if (!slideA || !slideB || !prevBtn || !nextBtn || !placesData.length) return;
+
+  const wallpapers = placesData
+    .map((place) => place.image)
+    .filter((image) => typeof image === "string" && image.trim() !== "");
+
+  if (!wallpapers.length) return;
+
+  const slides = [slideA, slideB];
+  let currentSlideIndex = 0;
+  let currentWallpaperIndex = 0;
+
+  slideA.style.backgroundImage = `url('${wallpapers[currentWallpaperIndex]}')`;
+  slideA.classList.add("active");
+
+  function changeWallpaper(direction) {
+    const nextWallpaperIndex =
+      (currentWallpaperIndex + direction + wallpapers.length) %
+      wallpapers.length;
+    const nextSlideIndex = currentSlideIndex === 0 ? 1 : 0;
+    const currentSlide = slides[currentSlideIndex];
+    const nextSlide = slides[nextSlideIndex];
+
+    nextSlide.style.backgroundImage = `url('${wallpapers[nextWallpaperIndex]}')`;
+    nextSlide.classList.add("active");
+    currentSlide.classList.remove("active");
+
+    currentWallpaperIndex = nextWallpaperIndex;
+    currentSlideIndex = nextSlideIndex;
+  }
+
+  prevBtn.addEventListener("click", () => changeWallpaper(-1));
+  nextBtn.addEventListener("click", () => changeWallpaper(1));
 }
 
 function loadFeaturedPlaces() {
@@ -73,7 +115,7 @@ function initHomeSearch() {
       const query = searchInput.value.trim();
       if (query) {
         window.location.href = `places.html?search=${encodeURIComponent(
-          query
+          query,
         )}`;
       }
     });
@@ -92,7 +134,7 @@ function initDivisionFilters() {
     card.addEventListener("click", () => {
       const division = card.dataset.division;
       window.location.href = `places.html?division=${encodeURIComponent(
-        division
+        division,
       )}`;
     });
   });
@@ -148,7 +190,7 @@ function createPlaceCard(place) {
                 </p>
                 <p class="place-description">${place.description.substring(
                   0,
-                  100
+                  100,
                 )}...</p>
             </div>
         </div>
@@ -285,9 +327,8 @@ function loadPlaceDetails() {
 
   // Update hero section
   document.getElementById("placeName").textContent = place.name;
-  document.getElementById(
-    "placeLocation"
-  ).textContent = `${place.district}, ${place.division}`;
+  document.getElementById("placeLocation").textContent =
+    `${place.district}, ${place.division}`;
   document.getElementById("placeRating").textContent = place.rating;
 
   const hero = document.getElementById("placeHero");
@@ -330,7 +371,7 @@ function loadPlaceBlogs(placeId) {
                 <div>
                     <h4>${blog.author}</h4>
                     <span style="color: var(--text-light); font-size: 0.9rem;">${formatDate(
-                      blog.date
+                      blog.date,
                     )}</span>
                 </div>
             </div>
@@ -342,7 +383,7 @@ function loadPlaceBlogs(placeId) {
                 }</span>
             </div>
         </div>
-    `
+    `,
     )
     .join("");
 }
@@ -537,7 +578,7 @@ function initLoginPage() {
 
       const password = document.getElementById("signupPassword").value;
       const confirmPassword = document.getElementById(
-        "signupConfirmPassword"
+        "signupConfirmPassword",
       ).value;
 
       if (password !== confirmPassword) {
