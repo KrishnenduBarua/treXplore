@@ -1,0 +1,62 @@
+CREATE DATABASE IF NOT EXISTS trexplore_db;
+USE trexplore_db;
+
+CREATE TABLE IF NOT EXISTS users (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(120) NOT NULL,
+  email VARCHAR(191) NOT NULL UNIQUE,
+  phone VARCHAR(25) NULL,
+  password_hash VARCHAR(255) NOT NULL,
+  avatar_url VARCHAR(500) NULL,
+  bio TEXT NULL,
+  location VARCHAR(191) NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS places (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(191) NOT NULL,
+  division VARCHAR(80) NOT NULL,
+  district VARCHAR(80) NOT NULL,
+  category VARCHAR(80) NOT NULL,
+  description TEXT NOT NULL,
+  image_url VARCHAR(1000) NOT NULL,
+  rating DECIMAL(2,1) NOT NULL DEFAULT 0.0,
+  best_time VARCHAR(100) NULL,
+  entry_fee VARCHAR(120) NULL,
+  parking VARCHAR(120) NULL,
+  food VARCHAR(120) NULL,
+  accommodation VARCHAR(120) NULL,
+  getting_there TEXT NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  INDEX idx_places_division (division),
+  INDEX idx_places_district (district),
+  INDEX idx_places_category (category)
+);
+
+CREATE TABLE IF NOT EXISTS blogs (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  place_id INT NOT NULL,
+  user_id INT NOT NULL,
+  title VARCHAR(255) NOT NULL,
+  content TEXT NOT NULL,
+  rating DECIMAL(2,1) NOT NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  CONSTRAINT fk_blogs_place FOREIGN KEY (place_id) REFERENCES places (id) ON DELETE CASCADE,
+  CONSTRAINT fk_blogs_user FOREIGN KEY (user_id) REFERENCES users (id) ON DELETE CASCADE,
+  INDEX idx_blogs_place (place_id),
+  INDEX idx_blogs_user (user_id)
+);
+
+CREATE TABLE IF NOT EXISTS favorites (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  user_id INT NOT NULL,
+  place_id INT NOT NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  CONSTRAINT fk_favorites_user FOREIGN KEY (user_id) REFERENCES users (id) ON DELETE CASCADE,
+  CONSTRAINT fk_favorites_place FOREIGN KEY (place_id) REFERENCES places (id) ON DELETE CASCADE,
+  UNIQUE KEY uq_user_place (user_id, place_id)
+);
